@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   num1: <input type="text" id="txtNum1"><br>
+   num2: <input type="text" id="txtNum2"><br>
+   <input type="button" value="Add" onclick="funAdd()">
+   <input type="button" value="Product" onclick="funProduct()"> 
+   <br>
+   Result: <input type="text" id="txtRes"><br>
+   <div id="d1">Result :</div>
+   <script>
+    var d1=document.getElementById("d1");
+    var txtRes=document.getElementById("txtRes");
+    function funAdd(){
+        var num1=document.getElementById("txtNum1").value;
+        var num2=document.getElementById("txtNum2").value;
+        var sum=parseInt(num1)+parseInt(num2);
+        console.log(sum);
+        txtRes.readonly=true;
+        txtRes.value=sum;
+        d1.innerHTML+="<br>Addition="+sum;
+    }
+    function funProduct(){
+        var num1=document.getElementById("txtNum1").value;
+        var num2=document.getElementById("txtNum2").value;
+        var sum=parseInt(num1)*parseInt(num2);
+        console.log(sum);
+        txtRes.readonly=true;
+        txtRes.value=sum;
+        d1.innerHTML+="<br>Product="+sum;
+    }
+   </script> 
+</body>
+</html>

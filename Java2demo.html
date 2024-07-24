@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d1">Helloo</div>
+    <input type="button" value="click" onclick="fun()">
+    <hr>
+    Name: <input type="text" id="txtName"><br>
+    <input type="button" value="clickname" onclick="funName()">
+    <hr>
+    <script>
+        var d1=document.getElementById("d1");
+         
+        function fun(){
+            d1.innerHTML+="<br><b>This is Script</b>";
+            d1.style.backgroundColor="lightblue";
+            d1.style.color="green"
+    }
+    var name=document.getElementById("txtName");
+    function funName(){
+        var name=txtBox.value;
+        console.log(name);
+        console.log(d1.innerHTML)
+        d1.innerHTML+="<br> <b> hello"+name;
+    }
+    
+</script>
+</body>
+</html>
