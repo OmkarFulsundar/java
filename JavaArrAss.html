@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arr List</title>
+</head>
+<body>
+    <form name="sample">
+    Roll no : <input type="number" name="rollno">
+    <input type="button" name="Add" value="Add Data" onclick="addStudent();">
+
+    <table id="tbl" class="table" border="1">
+        <tr>
+            <td>rollno</td>
+        </tr>
+    </table>
+    </form>
+    <script>
+        function addStudent(){
+            var rollno=document.sample.rollno.value;
+            var td1=tr.appendChild(document.createElement('td'));
+            td1.innerHTML=rollno;
+            document.getElementById("tbl").appendChild(tr);
+        }
+    </script>
+</body>
+</html>

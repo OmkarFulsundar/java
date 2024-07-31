@@ -6,27 +6,33 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text">
-   <input type="button" value="prime" onclick="funPrime()"> 
+   num: <input type="text" id="txtnum"> <br>
+   <input type="button" value="click" onclick="funPrime()">
+   <div id="d1"></div>
    <script>
-    var d1=document.getElementById("d1")
-    function funPrime(){
-        var st=10;
-        var end=20;
-        var i=4;
-        for(num=st;i<num;num++){
-            for(i=2;i<=num;i++){
-                if(num%i==0){
-                    if(num==i){
-                        d1.innerHTML+="<br> Prime"+nim;
-                    }
-                    else{
-                        break;
-                    }
-                }
-            }
-        }
+    var d1=document.getElementById("d1");
+    function funPrime()
+    {
+        var num=document.getElementById("txtnum").value;
+        for(i=1;i<=num;i++)
+    {
+        if(num%i==0)
+    {
+        if(num==i)
+    {
+        d1.innerHTML="prime";
+    }
+    else
+    {
+        d1.innerHTML="not prime";
+        break;
+    }
+    
+    }
+    }
+
     }
    </script>
+   
 </body>
-</html>
+</html> 

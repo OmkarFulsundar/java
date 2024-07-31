@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+</head>
+<body>
+    <h1>Student Date</h1>
+    <form name="sample">
+    <br>
+    Roll no : <input type="number" name="rollno">
+    Name : <input type="text" name="name">
+    Bdate : <input type="date" name="Bdate">
+    Age : <input type="number" name="age">
+    <br> <br>
+    <input type="button" name="Add" value="Add Data" onclick="addStudent();"> <hr>
+    <table id="tbl" class="table" border="1">
+        <tr>
+            <td>rollno</td>
+            <td>name</td>
+            <td>Bdate</td>
+            <td>Age</td>
+        </tr>
+    </table>
+</form>
+    <script type="text/javascript">
+
+    function addStudent(){
+        var rollno=document.sample.rollno.value;
+        var name=document.sample.name.value;
+        var Bdate=document.sample.Bdate.value;
+        var age=document.sample.age.value;
+        var tr=document.createElement('tr');
+        var td1=tr.appendChild(document.createElement('td'));
+        var td2=tr.appendChild(document.createElement('td'));
+        var td3=tr.appendChild(document.createElement('td'));
+        var td4=tr.appendChild(document.createElement('td'));
+        td1.innerHTML=rollno;
+        td2.innerHTML=name;
+        td3.innerHTML=Bdate;
+        td4.innerHTML=age;
+        
+        document.getElementById("tbl").appendChild(tr);
+
+}
+    </script>
+</body>
+</html>
