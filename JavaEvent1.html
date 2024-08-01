@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d1">This ts Div</div>
+    <div id="d2">this is div2</div>
+    <hr>
+
+    <ul id="list1" onclick="">
+        <li>red</li>
+        <li>pink</li>
+        <li>green</li>
+    </ul>
+    <input type="button" value="button" id="btn1">
+
+    <script>
+        var btn1=document.getElementById("btn1");
+        btn1.addEventListener("click",fun1,false);
+        btn1.addEventListener("mouseover",fun1);
+        btn1.addEventListener("mouseout",fun1);
+
+        function fun1(event){
+            if(event.type=="click")
+        {
+            console.log("clicked");
+        }
+        else if(event.type=="mouseover")
+        {
+            btn1.style.backgroundColor="aqua";
+        }
+        else if(event.type=="mouseout"){
+            btn1.style.backgroundColor="yellow";
+        }
+    }
+
+
+        var d=document.getElementById("d1");
+        var d=document.getElementById("d2");
+        d1.addEventListener("click",funDiv);
+        d2.addEventListener("click",funDiv);
+         
+        function funDiv(){
+            var txt=event.currentTarget.textContent;
+            console.log(txt);
+        }
+
+        var ul=document.getElementById("list1");
+            ul.addEventListener("click",funlist);
+
+        function funlist(event){
+            var x=event.target.textContent;
+            document.bgColor=x;
+        }
+    </script>
+</body>
+</html>

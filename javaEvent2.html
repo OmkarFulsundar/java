@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li id="li1">say name</li>
+        <li id="li2">change bgColor</li>
+        <li id="li3"> change font color</li>
+    </ul>
+    <script>
+        var ul=document.getElementById("list");
+        ul.addEventListener("click",funli);
+
+        function funli(event){
+            var op=event.target.id;
+            switch(op){
+                case "li1":alert("its click"); break;
+                case "li2":ul.style.backgroundColor="yellow";
+                case "li3":event.target.style.color="red";
+            }
+        }
+    </script>
+</body>
+</html>
