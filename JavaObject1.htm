@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><object data="" type=""></object></title>
+</head>
+<body>
+    Product Name : <input type="text" id="txtName"> <br>
+    Product Price : <input type="text" id="txtPrice"> <br> <br>
+    <input type="button" value="Add" onclick="funAdd()"> 
+    <input type="button" value="Update" onclick="funUp()"> <br>
+    <input type="button" value="Delete" onclick="funDelete()"> <br>
+    <ul id="ul1"></ul>
+
+    <script>
+        var list=[];
+        var ul=document.getElementById("ul1");
+         ul.addEventListener("click", funClick);
+         ul.addEventListener("click",funClick);
+
+        function Product(name,price){
+            this.prodName=name;
+            this.prodPrice=price;
+        }
+        function funAdd(){
+            var txtName=document.getElementById("txtName").value;
+            var txtPrice=document.getElementById("txtPrice").value;
+            var obj=new Product(txtName,txtPrice);
+            list.push(obj);
+            console.log(list);
+            display(list);
+        }
+        function display(arr){
+            var str="";
+            for (i=0; i<arr.length;i++){
+                str+="<li>"+arr[i].prodName+"*"+arr[i].prodPrice+"</li>";
+                   }
+                   ul.innerHTML=str;
+        }
+        function funClick(event){
+            var x=event.target.textContent;
+            console.log(x);
+            var strArr=x.split("*");
+            document.getElementById("txtName").value=strArr[0];
+            document.getElementById("txtPrice").value=strArr[1];
+        }
+       function funUp(){
+       var txtName=document.getElementById("txtName").value;
+       var textPrice=document.getElementById("txtPrice").value;
+          
+            for(let i=0; i<list.length; i++){
+                if(list[i].prodName===txtName){
+                    list[i].prodPrice=textPrice;
+                }
+            }
+            display(list);
+        }
+       function funDelete{
+        var txtName=document.getElementById("txtName").value;
+       var textPrice=document.getElementById("txtPrice").value;
+          
+            for(let i=0; i<list.length; i++){
+                if(list[i].prodName===txtName){
+                    list.splice[i,1]
+                }
+       }
+       display(list);
+    }
+        
+    </script>
+</body>
+</html> 

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Category</title>
+</head>
+<body>
+    category: <select id="selCat"></select>
+    <div id="d1"></div>
+    <p id="p1"></p>
+
+    <script>
+        var list=[
+            {category: "history",bName:"pawankhind", bPrice:200},
+           {category: "history",bName:"khosla", bPrice:300},
+           {category: "fiction",bName:"abc", bPrice:400},
+           {category: "comic",bName:"chintoo", bPrice:100}
+                ]
+        var select=document.getElementById("selCat");
+        select.addEventListener("change",funChange);
+        // console.log(x);
+        function funDrop(){
+            var str="<option>category</option>";
+            for (let i=0;i<list.length;i++){
+                str+="<option>"+list[i].category+"</option>";
+            }
+            select.innerHTML=str;
+        }
+        funDrop()
+        var d1=document.getElementById("d1");
+        var total=0;
+        function funChange() {
+            var category=select.value;
+            console.log(category);
+            var str="";
+            for (let i=0;i<list.length;i++){
+                if(list[i].category==category){
+                    str+="<input type=checkbox onchange=checkChange(event) value="+list[i].bPrice+">"+ list[i].bName+"*"+list[i].bPrice+"<br>";
+                }
+            }
+            total=0;
+            d1.innerHTML=str;
+        }
+            var p1= document.getElementById("p1")
+                function checkChange(event){
+                    var x=event.currentTarget;
+                    if(x.checked){
+                        total=total-parseInt(x.value);
+                    }
+                    p1.innerHTML= "<b> Total:</b>Rs."+total+"only";
+                }
+        
+        
+    </script>
+</body>
+</html>

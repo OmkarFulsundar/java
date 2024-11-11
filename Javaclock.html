@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <input type="button" value="Open" onclick="funOpen()">
+    <input type="button" value="Close" onclick="funClose()">
+    <input type="button" value="Start" onclick="funStart()">
+    <input type="button" value="Stop" onclick="funStop()">
+    <script>
+         var p=document.querySelector("p");
+         function show(){
+                var today=new Date();
+                p.innerHTML=today.toDateString()+"<br>"+today.toLocaleTimeString();
+       }
+       setInterval("show()",1000);
+     // setTimeout("show()",1000);
+     //case 2
+        function funOpen(){
+           myWin= window.open("","myWin","width=100px,height=100px");
+           myWin.document.write("hello");
+           myWin.document.bgColor="lightblue";
+       }
+       function funClose(){
+       myWin.close();
+       }
+       var colors=["red","blue","green","yellow"];
+       var i=0;
+       function funColors(){
+        document.bgColor=colors[i];
+        i++;
+        if(i==colors.length){
+            i=0;
+        }
+       }
+      function funStart(){
+        si=setInterval("funColors()",1000);
+      }
+      function funStop(){
+        clearInterval(si);
+      }
+    </script>
+</html>

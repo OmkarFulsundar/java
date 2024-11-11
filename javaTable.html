@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Table</title>
+</head>
+<body>
+    <table border="2">
+        <tr>
+            <td>Roll no</td>
+            <td>Name</td>
+            <td> <a href="" ></a>Marks</td>
+        </tr>
+        <tr>
+            <td>1 </td>
+            <td>omkar</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Sid</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>vishal</td>
+            <td>30</td>
+        </tr>
+    </table>
+    <div id="d1"></div>
+    <script>
+
+        var table=document.querySelector("table");
+        table.addEventListener("click",funClick);
+        
+        function funClick(event){
+            // var td=event.target;
+            // var tr=td.parentNode;
+            // console.log(tr);
+            // tr.parentNode.removeChild(tr);
+        
+            var td=event.target;
+            var tr=td.parentNode;
+            var ind=0;
+            var arr=tr.children;
+            
+            for (let i=0; i<arr.length; i++){
+                if(arr[i]==td){
+                    console.log(i);
+                    ind=i;
+                }
+            }
+        var trArr=table. querySelectorAll("tr");
+        for(let i=0;i<trArr.length;i++){
+            var td=trArr[i].children;
+            td[ind].parentNode.removeChild(td[ind]);
+        }
+        }
+
+    </script>
+</body>
+</html>
